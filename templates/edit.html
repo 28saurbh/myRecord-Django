@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block content %}
+
+    <form method="POST" action="/update/{{ customer.id }}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th scope="col"><label>Date:</label></th>
+                <td><input type="date" required name="date" value="{{ customer.modi_date }}"></td>
+            </tr>
+            <tr>
+                <th scope="col"><label>Bill No:</label></th>
+                <td><input required name="customer_bill" value="{{ customer.customer_bill}}"></td>
+            </tr>
+            <tr>
+                <th scope="col"><label>Name:</label></th>
+                <td><input required name="customer_name" value="{{ customer.customer_name}}"></td>
+            </tr>
+            <tr>
+                <th scope="col"><label>Contact:</label></th>
+                <td><input required name="customer_mobile" value="{{ customer.customer_mobile}}"></td>
+            </tr>
+            <tr>
+                <th scope="col"><label>Village:</label></th>
+                <td><input required name="customer_village" value="{{ customer.customer_village}}"></td>
+            </tr>
+            <tr>
+                <th scope="col"><label>Paid Bal:</label></th>
+                <td><input required name="customer_paid_bal" value="{{ customer.customer_paid_bal}}"></td>
+            </tr>
+            <tr>
+                <th scope="col"><label>Due Bal:</label></th>
+                <td><input required name="customer_due_bal" value="{{ customer.customer_due_bal}}"></td>
+            </tr>
+            <tr>
+                <th scope="col"><label>Total Bal:</label></th>
+                <td><input required name="customer_total_bal" value="{{ customer.customer_total_bal}}"></td>
+            </tr>
+            <tr>
+                <td>
+                   <button type="submit">Update</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    {% endblock %}

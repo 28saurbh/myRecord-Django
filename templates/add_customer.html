@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block content %}
+<form action="add" method="POST">
+  {% csrf_token %}
+
+   <label>Date:</label>
+  <div>
+    <input type="date" name='date' >
+  </div>
+
+  <label>Bill No.</label>
+  <div>{{ form.customer_bill }}</div>
+
+  <label>Name:</label>
+  <div>{{ form.customer_name}}</div>
+
+  <label>Contact:</label>
+  <div>{{ form.customer_mobile }}</div>
+
+  <label>Village:</label>
+  <div>{{ form.customer_village }}</div>
+
+  <label>Paid Bal.</label>
+  <div>{{ form.customer_paid_bal }}</div>
+
+  <label>Due Bal.</label>
+  <div>{{ form.customer_due_bal }}</div>
+
+  <label>Total Bal.</label>
+  <div>{{ form.customer_total_bal }}</div>
+
+  <div>
+    <button type="submit">Add</button>
+  </div>
+</form>
+
+{% endblock %}

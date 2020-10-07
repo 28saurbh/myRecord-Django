@@ -1,0 +1,31 @@
+{% extends 'base.html' %}{% block content %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <!--        <th scope="col">S.NO.</th>-->
+      <th scope="col">Date</th>
+      <th scope="col">Bill No.</th>
+      <th scope="col">Name</th>
+      <th scope="col">Mobile NO.</th>
+      <th scope="col">Village</th>
+      <th scope="col">Paid Bal.</th>
+      <th scope="col">Due Bal.</th>
+      <th scope="col">Toatal Bal.</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in customer %}
+    <tr>
+      <td>{{ i.date }}</td>
+      <td>{{ i.customer_bill }}</td>
+      <td>{{ i.customer_name }}</td>
+      <td>{{ i.customer_mobile }}</td>
+      <td>{{ i.customer_village}}</td>
+      <td>{{ i.customer_paid_bal }}</td>
+      <td>{{ i.customer_due_bal }}</td>
+      <td>{{ i.customer_total_bal }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
